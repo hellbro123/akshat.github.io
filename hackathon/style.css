@@ -1,0 +1,130 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+/* font-family: 'Cabin', sans-serif;
+font-family: 'Poiret One', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Raleway', sans-serif; */
+.home{
+   width:100%;
+   height: 100vh;
+   background-color: rgba(0, 0, 0, 0.6);
+}
+.home::before{
+    position: absolute;
+    background-attachment: fixed;
+    background-image: url("images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.heading {
+    color:#eee;
+    font-family: 'Cabin', sans-serif;
+    text-align:center;
+    padding: 20%;
+    font-size: 500%;
+    text-transform: uppercase;
+}
+
+.tag {
+    color:#eee;
+    font-family: 'Poiret One', cursive;
+    text-align: center;
+    margin-top:-20%;
+    font-size: 250%;
+}
+
+.section {
+    width: auto;
+    height: 200vh;
+    text-align: center;
+    background-color: white;
+    z-index: -1;
+}
+
+.head {
+    color: #000;
+    font-family: 'Cabin', sans-serif;
+    padding: 2%;
+}
+
+.col {
+    width:30%;
+    height: 50vh;
+}
+.col:hover {
+   cursor: pointer;
+}
+
+.tiger {
+    width: 70%;
+    height: 45vh;
+}
+
+.container {
+    margin-top: 5%;
+}
+
+.section2{
+    background-color: #000;
+    width: auto;
+    height: 150vh;
+    margin-top: 2%;
+    z-index: 200;
+}
+
+.bear{
+    width:70%;
+    height:45vh;
+}
+
+.manti{
+    width:70%;
+    height: 45vh;
+}
+
+.cyclops{
+    width: 70%;
+    height: 45vh;
+}
+
+
+.yak{
+    width: 70%;
+    height: 45vh;
+}
+
+.ele{
+    width: 75%;
+    height: 45vh;
+}
+
+.head2{
+    text-align: center;
+    color: #eee;
+    font-family: 'Cabin', sans-serif;
+
+}
+.text1{
+    color:#eee;
+}
+.modal-body{
+    font-weight: bolder;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.btn1 {
+    width: 80%;
+    height: 50vh;
+}
