@@ -2,151 +2,166 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+   
+}
+
+
+/* font-family: 'Cabin', sans-serif;
+font-family: 'Poiret One', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Raleway', sans-serif; */
+
+
+.home {
+    background-image: url("/images/diego-ph-5LOhydOtTKU-unsplash.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    width: auto;
+    height: 100vh;
 }
 
 .heading {
-    text-transform: capitalize;
-    margin-right: 3vh;
+    color: #fff;
+    text-align: center;
+    padding: 13%;
+    font-size: 500%;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 5vh;
+
 }
 
 
-/* font-family: 'Nunito', sans-serif;
 
-font-family: 'Poppins', sans-serif;
-
-font-family: 'Raleway', sans-serif; */
-.image{
-    margin-top: 0;
-    margin-left: 5vh;
-    width: 10vh;
-    height: 10vh;
-}
 
 .head {
-    margin-left: 5vh;
-    margin-right: 5vh;
-    margin-top: 3vh;
-    font-weight: bolder;
-    color: white;
-    font-family: 'Nunito', sans-serif;
-}
-
-a {
-    margin-right: 20vh;
-    text-decoration: none;
-    color: white;
-    text-transform: capitalize;
-    font-weight: bolder;
+    color: #fff;
+    text-align: center;
+    font-size: 300%;
     font-family: 'Raleway', sans-serif;
-    font-size: 3vh;
+    text-transform: uppercase;
+    padding-top: 2%;
+    letter-spacing: 1vh;
+   
 }
 
-.nav {
-    display: flex;
+.para {
+    color: #fff;
+    text-align: center;
+    font-family: 'Cabin', sans-serif;
+    text-transform: capitalize;
+    margin-top: 5%;
 }
 
-.links {
-    display: flex;
-   justify-content: center;
-   align-items: center;
-   margin-left: 50vh;
+.about {
+    width: auto;
+    background-color: #222121;
+    height: 60vh;
 }
 
-.heading {
-    color: white;
-    margin-top: 30vh;
-    margin-left: 15vh;
-    font-weight: bolder;
-    font-size: 5vh;
-    font-family: 'Poppins', sans-serif;
-}
-.h {
-    color: rgb(6, 245, 173);
-    font-weight: bolder;
-    margin-left: 32vh;
-     margin-top: -1.5em;
-    font-size: 5vh;
-    font-family: 'Poppins', sans-serif;
+
+.scroll {
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 5%;
+    
 }
 
-.name {
-    color: rgb(6, 245, 173);
-    font-weight: bolder;
-    margin-left: 15vh;
-     margin-top: 0.5em;
-    font-size: 5vh;
-    font-family: 'Poppins', sans-serif;
+
+
+.text {
+    color:#fff;
+    text-align: center;
+    margin-top: -8%;
+    font-size: 200%;
+    font-family: 'Poiret One', cursive;
+    letter-spacing: 2vh;
+
 }
 
 .work {
-    color: white;
-    margin-top: 3vh;
-    margin-left: 15vh;
-    font-weight: bolder;
-    font-size: 5vh;
-    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    width:auto;
+    height: 100vh;
+
 }
 
-.section {
-    position: relative;
-    top:-10vh;
-    
-}
-
-
-.hexagon {
-    width: 50vh;
-    height: 50vh;
-    background-color: rgb(6, 245, 173);
-    position: absolute;
-    top:-10vh;
-    right: 20vh;
-    clip-path: circle(50% at 50% 50%);
-    
-}
-
-
-#image {
-    position: absolute;
-    top: -35vh;
-    left: 5vh;
-}
-
-.para1 {
-    width: 50vh;
-    color: white;
-    margin-left: 15vh;
-    margin-top: 5vh;
-    font-family: 'Nunito', sans-serif;
-    text-transform:uppercase;
-}
-
-.btn {
-    width: 20vh;
-    height: 10vh;
-    background-color: rgba(6, 245, 193, 0.808);
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 3vh;
+.head1 {
+    color:#fff;
+    text-align: center;
+    font-size: 300%;
     font-family: 'Raleway', sans-serif;
-    border-radius: 10%;
-    color: red;
-    border: 0px solid black;
-    margin: 5vh 0 0 15vh;
-    box-shadow: 5px 5px 5px rgb(6, 245, 173);
+    text-transform: uppercase;
+    letter-spacing: 1vh;
+    padding: 1%;
+    padding-top: 5%;
 }
 
-.btn:hover {
-    background-color: red;
-    color: rgba(6, 245, 193, 0.808);
+.card {
+    margin-left: 5%;
+}
+.cards {
+    display: flex;
+    flex-direction: row;
 }
 
-/* .social {
-    color: white;
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    margin-left:160vh;
-    margin-top: -10vh;
-} */
+.prize {
+    width: auto;
+    background: rgba(0,0,0,0.6);
+    height: 100%;
+  
+}
 
-/* Will do this tommorow*/
+.prize::before{
+    position: absolute;
+    background-attachment: fixed;
+    background-image: url("/images/kristopher-roller-zepnJQycr4U-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.head2{
+    color: #fff;
+    font-family: 'Raleway', sans-serif; 
+    letter-spacing: 1vh;
+    font-size: 300%;
+    text-align: center;
+    padding: 2%;
+}
+
+.slide {
+    margin-top: -5%;
+}
+
+.head3 {
+    color:#fff;
+    letter-spacing: 1vh;
+    font-family: 'Raleway', sans-serif; 
+    font-size: 300%;
+    text-align: center;
+    padding: 2%;
+}
+
+
+
+.skill {
+    width: auto;
+    background-color: lightslategrey;
+    height: 100vh;
+    margin-top: -5%;
+}
+
+.para {
+    color:#fff;
+    font-family: 'Raleway', sans-serif;
+    font-size: 200%;
+    text-align: center;
+
+}
+
