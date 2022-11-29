@@ -26,9 +26,22 @@ font-family: 'Raleway', sans-serif; */
 li {
     list-style-type: none;
     font-weight: bold;
-    margin-left: 5%;
-    margin-top: -3%;
+    margin-left: 55%;
+    margin-top: -18%;
     font-size: 150%;
+    cursor: pointer;
+    width: 5%;
+}
+
+a {
+    margin-left: 55%;
+    margin-top: -15%;
+    cursor: pointer;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
     cursor: pointer;
 }
 
@@ -39,6 +52,7 @@ li {
     margin-top: 2%;
     margin-left: 15%;
     font-size: 150%;
+    
 }
 
 .btn {
@@ -52,10 +66,12 @@ li {
 
 .down {
     margin-top: -2.5%;
+    width: 65%;
+    pointer-events: none;
 }
 .download {
-    
-    margin-left: 80%;
+    cursor: pointer;
+    margin-left: 130%;
     
 }
 
@@ -86,4 +102,62 @@ li {
     width: 45%;
     margin-top: -25%;
     margin-left: 55%;
+}
+
+.line {
+    background-color: white;
+    width: auto;
+    height: .1em;
+    margin-top: 4%;
+}
+
+#section1 {
+    width: auto;
+    height: 100vh;
+}
+
+.head2 {
+    color: white;
+    margin-left: 45%;
+    margin-top: 2%;
+    z-index: 100;
+}
+
+.about {
+    width: 90%;
+    height: 90vh;
+    border: 2px solid rgba(0, 255, 136, 0.918);
+    border-radius: 2%;
+    margin-left: 5%;
+    z-index: -100;
+    margin-top: 5%;
+}
+
+.line1{
+    background-color: rgba(0, 255, 136, 0.918);
+    width: 30%;
+    height: .1em;
+    transform: rotateZ(90deg);
+    margin-left: 34.5%;
+    margin-top: -20%;
+}
+
+.name1 {
+    text-transform: capitalize;
+    color: white;
+    margin-left: 7%;
+    font-size: 200%;
+    font-family: 'Poppins', sans-serif;
+    width: 40%;
+    margin-top: -13%;
+}
+
+.educ {
+    color: white;
+    text-transform: capitalize;
+    font-size: 200%;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 53%;
+    margin-top: -28%;
+    width: 40%;
 }
