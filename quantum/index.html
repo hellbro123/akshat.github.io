@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUANTUM MECHANICS</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Poiret+One&family=Poppins:wght@100&family=Raleway:wght@500&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.15/fullpage.min.css" integrity="sha512-FKlWnaJrtBEqH+gNy8kvp+/61S+8iOKb5tG+EKCQ3Fc3iUYr9MvnywpkZBcuNKrxQxlnZYpNwDgkZ2atX7wVVg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <div id="navbar">
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="#home">Home</a>
+      </div>
+      <div id="fullPage">
+        <div class="section s1">
+            <h1 class="head">Quantum Physics</h1>
+            <h2 class="sub">the power on which this whole universe works</h2>
+        </div>
+        <div class="section s2" id="home">
+            <h1 class="head1">What Is Quantum Physics</h1>
+            <img src="/images/home.jpg" alt="image" class="img">
+            <h2 class="text">Quantum mechanics is a fundamental theory in physics that provides a description of the physical properties of nature at the scale of atoms and subatomic particles. </h2>
+        </div>
+        <div class="section s3" id="Problems">
+            <h1 class="prob">Origin Of Quantum Physics</h1>
+            <h2 class="text1">The field of quantum physics arose in the late 1800s and early 1900s from a series of experimental observations of atoms that didn't make intuitive sense in the context of classical physics. Among the basic discoveries was the realization that matter and energy can be thought of as discrete packets, or quanta, that have a minimum value associated with them. For example, light of a fixed frequency will deliver energy in quanta called "photons." Each photon at this frequency will have the same amount of energy, and this energy can't be broken down into smaller units. In fact, the word "quantum" has Latin roots and means "how much."</h2>
+            <img src="/images/pendulum.gif" alt="pendulum" class="gif">
+        </div>
+        <div class="section s4" id="observation">
+            <h1 class="ob">Observation Of Quantum Objects</h1>
+            <h2 class="text2">The act of observation is a topic  quantum physics. Early in the field, scientists were baffled to find that simply observing an experiment influenced the outcome. For example, an electron acted like a wave when not observed, but the act of observing it caused the wave to collapse and the electron to behave instead like a particle.</h2>
+            <img src="/images/particle.gif" alt="particle" class="gif1">
+            
+        </div>
+        <div class="section s5" id="about">
+            <h1 class="heading">About</h1>
+            <h2 class="me">Yoo, There I am Akshat Hatwal A devoloper in the making I love creating websites and this is my website to show how much i am interested in physics Please give feedback on how to improve this site. Thank you for Visiting</h2>
+    <a href="#feed" class="btn btn-neon" >
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Feed Back
+    </a>
+        </div>
+        <div class="section s6" id="feed">
+            <div class="wrapper">
+                <h2>Feedback Form</h2>
+                <div id="error_message"></div>
+                <form id="myform" onsubmit="return validate();">
+                  <div class="input_field">
+                      <input type="text" placeholder="First Name" id="fname">
+                  </div>
+                  <div class="input_field">
+                      <input type="text" placeholder="Last Name" id="lname">
+                  </div>
+                  <div class="input_field">
+                      <input type="text" placeholder="Phone" id="phone">
+                  </div>
+                  <div class="input_field">
+                      <input type="text" placeholder="Email" id="email">
+                  </div>
+                  <div class="input_field">
+                      <textarea placeholder="Your Feedback" id="yourfeedback"></textarea>
+                  </div>
+                  <div class="btn">
+                      <input type="submit">
+                  </div>
+                </form>
+              </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.15/fullpage.min.js" integrity="sha512-rNf09cQHIWzD8BU37lIb3rInygeWXW2hVqJ7niVtTPXWuVR3aFiph1eFIeDiEQV8J45u0qfp7ng8I3TzJHY4Eg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+  }
+}
+
+new fullpage ('#fullPage', {
+  autoScrolling:true,
+  navigation:true,
+  navigationTooltips: ['Home', 'What', 'Origin','Observation','About','Feedback']
+})
+
+function validate()
+{
+  var firstname = document.getElementById("fname").value;
+  var lastname = document.getElementById("lname").value;
+  var phone = document.getElementById("phone").value;
+  var email = document.getElementById("email").value;
+  var yourfeedback = document.getElementById("yourfeedback").value;
+  var error_message = document.getElementById("error_message");
+  
+  error_message.style.padding = "10px";
+  
+  var text;
+  if(fname.length < 3)
+  {
+    text = "Please Enter a valid First Name";
+    error_message.innerHTML = text;
+    return false;
+  }
+  if(lname.length < 3)
+  {
+    text = "Please Enter a Valid Last Name";
+    error_message.innerHTML = text;
+    return false;
+  }
+  if(isNaN(phone) || phone.length != 10)
+  {
+    text = "Please Enter valid Phone Number";
+    error_message.innerHTML = text;
+    return false;
+  }
+  if(email.indexOf("@") == -1 || email.length < 6)
+  {
+    text = "Please Enter valid Email";
+    error_message.innerHTML = text;
+    return false;
+  }
+  if(address.length <= 140)
+  {
+    text = "Please Enter More Than 140 Characters";
+    error_message.innerHTML = text;
+    return false;
+  }
+  alert("Form Submitted Successfully!");
+  return true;
+}
+    </script>
+    
+    
+</body>
+</html>
