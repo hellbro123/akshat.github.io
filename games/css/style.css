@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root {
+    --color:#3D3B8E;
+    --color1:#53DD6C;
+    --color2:#F96E46;
+    --color3:#F9C846;
+    --color4:#0F7173;
+
+}
+
+/* 
+font-family: 'Open Sans', sans-serif;
+font-family: 'Poiret One', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+
+body,html {
+    height: 100%;
+}
+
+
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: clamp(2rem, 2.8vw, 5rem);
+    font-weight: bold;
+    background-color: var(--color);
+    width: auto;
+    flex-direction: column;
+  }
+
+.main {
+    color:var(--color1);
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+   
+}
+
+.main {
+	width: 10ch;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 4px solid #212121;
+	animation:text 5s steps(18) alternate infinite;
+}
+
+
+
+@keyframes text {
+	0% { 
+    width: 0; 
+  }
+	100% { 
+    width: 10ch; 
+  }
+}
+
+.text {
+    color: var(--color2);
+    letter-spacing: 0.2em;
+}
+
+button{
+    margin-top: 2%;
+}
+
+.custom-btn {
+    color: #fff;
+    width: 130px;
+    height: 40px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+  }
+  
+
+.btn-6 {
+    background: var(--color2);
+    line-height: 40px;
+    padding: 0;
+    border: none;
+    box-shadow: 0 0 5px var(--color2);
+  }
+  .btn-6 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-6:hover{
+    background: transparent;
+  }
+  .btn-6:before,
+  .btn-6:after {
+    position: absolute;
+    content: "";
+    height: 0%;
+    width: 2px;
+    background: var(--color2);
+   box-shadow: 0 0 5px var(--color2);
+  }
+  .btn-6:before {
+    right: 0;
+    top: 0;
+    transition: all 500ms ease;
+  }
+  .btn-6:after {
+    left: 0;
+    bottom: 0;
+    transition: all 500ms ease;
+  }
+  .btn-6:hover:before {
+    transition: all 500ms ease;
+    height: 100%;
+  }
+  .btn-6:hover:after {
+    transition: all 500ms ease;
+    height: 100%;
+  }
+  .btn-6 span:before,
+  .btn-6 span:after {
+    position: absolute;
+    content: "";
+    background: var(--color2);
+    box-shadow: 0 0 5px var(--color2);
+  }
+  .btn-6 span:before {
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 2px;
+    transition: all 500ms ease;
+  }
+  .btn-6 span:after {
+    right: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    transition: all 500ms ease;
+  }
+  .btn-6 span:hover:before {
+    width: 100%;
+  }
+  .btn-6 span:hover:after {
+    width: 100%;
+  }
+  
+  .btn-text {
+    color: var(--color3);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    font-size: 150%; 
+  }
+
+  

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+    
+  <main class="main">
+    <div class="main__container">
+      <h1 class="main__header main-title">Sign up</h1>
+
+      <form action="https://getform.io/f/ceb817b5-e68e-4411-8db2-2508aebf4f61" method="POST" class="form">
+        <div class="form__input-box">
+          <input type="text" name="fname" id="fname" class="form__fname-input form__input generic-text" placeholder="First name" data-error="fname-error" data-success="fname-success" />
+          <p class="form__err-msg err-text" id="fname-error">
+            Can't be empty
+          </p>
+        </div>
+        <div class="form__input-box">
+          <input type="text" name="lname" id="lname" class="form__lname-input form__input generic-text" placeholder="Last name" data-error="lname-error" data-success="lname-success" />
+          <p class="form__err-msg err-text" id="lname-error">
+            Can't be empty
+          </p>
+        </div>
+        <div class="form__input-box">
+          <input type="text" name="username" id="username" class="form__username-input form__input generic-text" placeholder="Username" data-error="username-error" data-success="username-success" />
+          <p class="form__err-msg err-text" id="username-error">
+            Can't be empty
+          </p>
+        </div>
+        <div class="form__input-box">
+          <input type="email" name="email" id="email" class="form__email-input form__input generic-text" placeholder="Email address" data-error="email-error" data-success="email-success" />
+          <p class="form__err-msg err-text" id="email-error"></p>
+        </div>
+
+        <div class="form__input-box">
+          <input type="password" name="password" id="password" class="form__password-input form__input generic-text" placeholder="Password" data-error="password-error" data-success="password-success" />
+
+          <p class="form__err-msg err-text" id="password-error">
+            Can't be empty
+          </p>
+        </div>
+        <div class="form__input-box">
+          <input type="password" name="repeat-password" id="repeat-password" class="form__repeat-password-input form__input generic-text" placeholder="Repeat Password" data-error="repeat-password-error" data-success="repeat-password-success" />
+          <p class="form__err-msg err-text" id="repeat-password-error">
+            Can't be empty
+          </p>
+        </div>
+        <button class="form__submit-btn generic-text createAccountBtn">
+          Create an Account
+        </button>
+      </form>
+      <p class="main__text generic-text">
+        <span>Already have an account?</span>
+        <a href="login.html" class="main__login-link generic-text--link">Login</a>
+      </p>
+    </div>
+  </main>
+
+  <script>
+    const createAccountBtn = document.querySelector(".createAccountBtn");
+
+const email = document.getElementById("email");
+const fname = document.getElementById("fname");
+const lname = document.getElementById("lname");
+const password = document.getElementById("password");
+const username = document.getElementById("username");
+const repeatPassword = document.getElementById("repeat-password");
+
+createAccountBtn.addEventListener("click", validateForm);
+
+function validateForm(e) {
+  e.preventDefault();
+  const currentTarget = e.target;
+
+  let isEmail = validateEmail(email);
+  let isFName = validateName(fname);
+  let isLName = validateName(lname);
+  let isUsername = validateUsername(username);
+  let isPassword = validatePassword(password);
+  let isRepeatPassword = validateRepeatPassword(repeatPassword);
+
+  let isFormValid =
+    isEmail &&
+    isFName &&
+    isLName &&
+    isUsername &&
+    isPassword &&
+    isRepeatPassword;
+
+  if (isFormValid) {
+    currentTarget.textContent = "Creating account...";
+
+    setTimeout(() => {
+      resetFields(currentTarget, "Create Account", [
+        email,
+        fname,
+        lname,
+        password,
+        username,
+        repeatPassword
+      ]);
+    }, 5000);
+  }
+}
+
+function resetFields(targetBtn, text, inputs) {
+  targetBtn.textContent = text;
+  inputs.forEach((input) => {
+    input.value = "";
+    input.classList.remove("active-success");
+    input.classList.remove("active");
+  });
+}
+function validateEmail(inputType) {
+  let inputDataTarget = inputType.getAttribute("data-error");
+  let errMsgElement = document.getElementById(inputDataTarget);
+  errMsgElement.classList.add("active");
+
+  console.log(`data-error ====> ${inputDataTarget}`);
+  console.log(`data-error element ====> ${errMsgElement}`);
+
+  let isValid = false;
+  let formattedVal = inputType.value.trim();
+  let regExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  if (!isValid) {
+    inputType.classList.add("active-error");
+  }
+  if (!formattedVal) {
+    console.log("field musn't be empty...");
+    errMsgElement.textContent = "field musn't be empty...";
+  } else if (!regExp.test(formattedVal)) {
+    console.log(`${formattedVal} is not a proper email BRO! 👏`);
+    errMsgElement.textContent = "not a proper email BRO!";
+  } else {
+    errMsgElement.classList.remove("active");
+    inputType.classList.remove("active-error");
+    inputType.classList.add("active-success");
+    isValid = true;
+    console.log(`${formattedVal} is...it's aaight`);
+  }
+
+  return isValid;
+}
+function validateName(inputType) {
+  let inputDataTarget = inputType.getAttribute("data-error");
+  let errMsgElement = document.getElementById(inputDataTarget);
+  errMsgElement.classList.add("active");
+
+  console.log(`data-error ====> ${inputDataTarget}`);
+  console.log(`data-error element ====> ${errMsgElement}`);
+  // for full name only =>  /^[a-zA-Z]+( [a-zA-Z]+)+$/
+  let regExp = /^[A-Za-z]+$/;
+  let isValid = false;
+  let formattedVal = inputType.value.trim();
+  if (!isValid) {
+    inputType.classList.add("active-error");
+  }
+  if (!formattedVal) {
+    console.log("cant be empty!!!");
+    errMsgElement.textContent = "cant be empty!!!";
+  } else if (!regExp.test(formattedVal)) {
+    console.log(`hmmmmmm.......${formattedVal} dont seem like a valid name`);
+    errMsgElement.textContent = "dont seem like a valid name";
+  } else {
+    console.log(`${formattedVal} is a valid name!!!`);
+    errMsgElement.classList.remove("active");
+    inputType.classList.remove("active-error");
+    inputType.classList.add("active-success");
+    isValid = true;
+  }
+  return isValid;
+}
+function validateUsername(inputType) {
+  let inputDataTarget = inputType.getAttribute("data-error");
+  let errMsgElement = document.getElementById(inputDataTarget);
+  errMsgElement.classList.add("active");
+
+  console.log(`data-error ====> ${inputDataTarget}`);
+  console.log(`data-error element ====> ${errMsgElement}`);
+
+  let isValid = false;
+  let formattedVal = inputType.value.trim();
+  const min = 3;
+  const max = 24;
+  //  checks only for letters + numbers
+  let regExp = /^[a-zA-Z0-9]+$/;
+  // checks for letters + numbers + underscore + period
+  regExp = /^[a-z0-9_.]+$/;
+  if (!isValid) {
+    inputType.classList.add("active-error");
+  }
+  if (!formattedVal) {
+    console.log("username cannot be EMPTY!");
+    errMsgElement.textContent = "username cannot be EMPTY!";
+  } else if (!regExp.test(formattedVal)) {
+    console.log(`${formattedVal} is not a valid username -.-`);
+    errMsgElement.textContent = "not a valid username -.-";
+  } else if (!checkLengthRequirement(formattedVal, min, max)) {
+    console.log(
+      `${formattedVal} needs to be between 3 and 24 characters pls....pls 🤢`
+    );
+    errMsgElement.textContent = "needs to be between 3 and 24 characters";
+  } else {
+    isValid = true;
+    console.log(`${formattedVal} is a valid username :)`);
+    errMsgElement.classList.remove("active");
+    inputType.classList.remove("active-error");
+    inputType.classList.add("active-success");
+  }
+  return isValid;
+}
+function validatePassword(inputType) {
+  let inputDataTarget = inputType.getAttribute("data-error");
+  let errMsgElement = document.getElementById(inputDataTarget);
+  errMsgElement.classList.add("active");
+
+  console.log(`data-error ====> ${inputDataTarget}`);
+  console.log(`data-error element ====> ${errMsgElement}`);
+
+  let isValid = false;
+  let formattedVal = inputType.value.trim();
+  const min = 8;
+  const max = 25;
+  //   checks for uppercase, lowercase, numeric, and special character and 8,  15 is min / max
+  let regExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+  //   checks for uppercase, lowercase, numeric, and special character
+  regExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s)/;
+  let regExpUppercase = /[A-Z]/;
+  let regExpLowercase = /[a-z]/;
+  let regExpNumeric = /\d/;
+  let regExpSpecial = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+
+  if (!isValid) {
+    inputType.classList.add("active-error");
+  }
+  if (!formattedVal) {
+    console.log("field must not be empty...");
+    errMsgElement.textContent = "field must not be empty...";
+  } else if (!checkLengthRequirement(formattedVal, min, max)) {
+    console.log(
+      `password needs to be between ${min} and ${max} characters !!!!! 🤣`
+    );
+    errMsgElement.textContent = `password needs to be between ${min} and ${max} characters`;
+  }
+  //   else if (!regExp.test(formattedVal)) {
+  //     console.log(`${formattedVal} doesn't meet pass requirements`);
+  //   }
+  else if (!regExpUppercase.test(formattedVal)) {
+    console.log(`${formattedVal} needs one uppercase!`);
+    errMsgElement.textContent = `needs one uppercase!`;
+  } else if (!regExpLowercase.test(formattedVal)) {
+    console.log(`${formattedVal} needs one lowercase!`);
+    errMsgElement.textContent = `needs one lowercase!`;
+  } else if (!regExpNumeric.test(formattedVal)) {
+    console.log(`${formattedVal} needs one number!!!!!`);
+    errMsgElement.textContent = `needs one number!`;
+  } else if (!regExpSpecial.test(formattedVal)) {
+    console.log(`${formattedVal} needs one special character!!!!!`);
+    errMsgElement.textContent = `needs one special character!`;
+  } else {
+    errMsgElement.classList.remove("active");
+    inputType.classList.remove("active-error");
+    inputType.classList.add("active-success");
+    isValid = true;
+    console.log(`${formattedVal} is a valid password 😜`);
+  }
+
+  return isValid;
+}
+function validateRepeatPassword(inputType) {
+  let inputDataTarget = inputType.getAttribute("data-error");
+  let errMsgElement = document.getElementById(inputDataTarget);
+  errMsgElement.classList.add("active");
+
+  console.log(`data-error ====> ${inputDataTarget}`);
+  console.log(`data-error element ====> ${errMsgElement}`);
+
+  let isValid = false;
+  let formattedVal = inputType.value.trim();
+  let currentPassword = password.value.trim();
+
+  if (!isValid) {
+    inputType.classList.add("active-error");
+  }
+  if (!formattedVal) {
+    console.log("field must not be...empty");
+    errMsgElement.textContent = "field must not be...empty";
+  } else if (formattedVal !== currentPassword) {
+    console.log(
+      `Passwords do not match..... ${formattedVal} vs ${currentPassword} 🐱‍🐉`
+    );
+    errMsgElement.textContent = "Passwords do not match";
+  } else {
+    errMsgElement.classList.remove("active");
+    inputType.classList.remove("active-error");
+    inputType.classList.add("active-success");
+    console.log("....it is....a match!!!!!");
+    isValid = true;
+  }
+  return isValid;
+}
+function checkLengthRequirement(val, min, max) {
+  if (val.length >= min && val.length <= max) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+  </script>
+
+
+</body>
+</html>
