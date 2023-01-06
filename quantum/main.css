@@ -16,7 +16,7 @@ html,body {
 
 .s1 {
     width:auto;
-    background-image: url('/images/second.jpg');
+    background-image: url('second.jpg');
    background-size: cover;
    
 }
